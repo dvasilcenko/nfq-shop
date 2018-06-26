@@ -1,0 +1,13 @@
+services:
+    app.fixture.product:
+        class: AppBundle\Fixture\ProductFixture
+        tags:
+            - { name: sylius_fixtures.fixture }
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@sylius.factory.product'
+            - '@sylius.factory.product_variant'
+            - '@sylius.factory.channel_pricing'
+            - '@sylius.repository.channel'
+            - '@sylius.factory.product_attribute'
+            - '@sylius.factory.product_attribute_value'
